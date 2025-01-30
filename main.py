@@ -37,3 +37,9 @@ def fonction_chiffrage(cle, mot):
 
 print(fonction_chiffrage(cle,mot_minuscule))
 
+
+def lecture_fichier(file_name):
+    with open(file_name, 'r', encoding='utf-8') as file:
+        texte = file.read()
+    return texte
+
