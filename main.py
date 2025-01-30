@@ -17,9 +17,6 @@ def dechiffrer_texte(mot,cle):
 
     return nouveau_mot
 
-alphabet = string.ascii_lowercase
-
-
 mot_minuscule = mot.lower()
 
 print(mot_minuscule)
@@ -39,4 +36,10 @@ def fonction_chiffrage(cle, mot):
     return texte_chiffre
 
 print(fonction_chiffrage(cle,mot_minuscule))
+
+
+def lecture_fichier(file_name):
+    with open(file_name, 'r', encoding='utf-8') as file:
+        texte = file.read()
+    return texte
 
