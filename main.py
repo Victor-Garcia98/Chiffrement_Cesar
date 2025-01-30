@@ -17,9 +17,6 @@ def dechiffrer_texte(mot,cle):
 
     return nouveau_mot
 
-alphabet = string.ascii_lowercase
-
-
 mot_minuscule = mot.lower()
 
 print(mot_minuscule)
