@@ -1,8 +1,3 @@
-import string
-
-alphabet = string.ascii_lowercase
-text = 'uftu uftu'
-cle = -1
 
 def dechiffrer_texte(mot,cle):
     nouveau_mot=''
