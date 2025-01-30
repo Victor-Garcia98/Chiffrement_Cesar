@@ -1,10 +1,24 @@
-import string
-
-alphabet = string.ascii_lowercase
+import string 
 
 cle = 3
 
 mot = "LE petit chaperon rouge"
+
+
+def dechiffrer_texte(mot,cle):
+    nouveau_mot=''
+    for char in mot:
+        if char in alphabet:
+            modif = alphabet.find(char) + cle
+            lettre = alphabet[modif]
+            nouveau_mot = nouveau_mot + lettre
+        else :
+            nouveau_mot = nouveau_mot + char
+
+    return nouveau_mot
+
+alphabet = string.ascii_lowercase
+
 
 mot_minuscule = mot.lower()
 
@@ -25,3 +39,4 @@ def fonction_chiffrage(cle, mot):
     return texte_chiffre
 
 print(fonction_chiffrage(cle,mot_minuscule))
+
