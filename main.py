@@ -28,7 +28,7 @@ def fonction_chiffrage(cle, mot):
 
 
 def chiffrement_Cesar() :
-    cle = int(input("Entrez la clé : ")) % 26
+    cle = int(input("Entrez la clé : ")) % 25
     if input("Avez vous un fichier texte ou une phrase ? (t/p): ") == 't':
         titre_fichier = input("Entrez le nom du fichier : ")
         mot = lecture_fichier(titre_fichier)
