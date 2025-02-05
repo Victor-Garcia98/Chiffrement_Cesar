@@ -14,7 +14,12 @@ def fonction_chiffrage(cle, mot):
     for caractere in mot:
         if caractere in alphabet:
             index = alphabet.find(caractere)
-            new_character = alphabet[(index + cle)]
+            new_index = (index + cle)
+            if new_index > len(alphabet) :
+                new_index = new_index - len(alphabet)
+            elif new_index < 0 :
+                new_index = new_index + len(alphabet)
+            new_character = alphabet[new_index]
         else:
             new_character = caractere
 
@@ -23,7 +28,7 @@ def fonction_chiffrage(cle, mot):
 
 
 def chiffrement_Cesar() :
-    cle = int(input("Entrez la clé : "))
+    cle = int(input("Entrez la clé : ")) % 26
     if input("Avez vous un fichier texte ou une phrase ? (t/p): ") == 't':
         titre_fichier = input("Entrez le nom du fichier : ")
         mot = lecture_fichier(titre_fichier)
