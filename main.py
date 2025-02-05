@@ -7,6 +7,10 @@ def lecture_fichier(file_name):
         texte = file.read()
     return texte
 
+def dictionnaire(file_name):
+    with open(file_name, "r", encoding="utf-8") as f:
+        dictionnaire = set(word.strip().lower() for word in f.readlines())
+        return dictionnaire
 
 def fonction_chiffrage(cle, mot):
     texte_chiffre = ""
@@ -29,13 +33,7 @@ def fonction_chiffrage(cle, mot):
 
 def chiffrement_Cesar() :
     cle = int(input("Entrez la clé : ")) % 25
-    if input("Avez vous un fichier texte ou une phrase ? (t/p): ") == 't':
-        titre_fichier = input("Entrez le nom du fichier : ")
-        mot = lecture_fichier(titre_fichier)
-        mot = mot.lower()
-    else :
-        mot = str(input("Entrez la phrase : "))
-        mot = mot.lower()
+    interrogation()
     if input("Voulez-vous chiffrer ou déchiffrer ? (c/d): ") == 'c':
 
         print(fonction_chiffrage(cle,mot))
@@ -43,6 +41,14 @@ def chiffrement_Cesar() :
         print(fonction_chiffrage(-cle, mot))
 
 def bruteforce() :
+    interrogation()
+    essais = []
+    for i in range(25):
+        phrase = fonction_chiffrage(i, mot)
+        essais.append(phrase)
+        print(f"Voici les essais de déchiffrage du texte fourni :\nclé essayée =[{i}] / résultat= {phrase}\n\n")
+
+def interrogation():
     if input("Avez vous un fichier texte ou une phrase ? (t/p): ") == 't':
         titre_fichier = input("Entrez le nom du fichier : ")
         mot = lecture_fichier(titre_fichier)
@@ -50,11 +56,7 @@ def bruteforce() :
     else :
         mot = str(input("Entrez la phrase : "))
         mot = mot.lower()
-    essais = []
-    for i in range(25):
-        essais.append(fonction_chiffrage(i, mot))
-    print(essais)
-
+    return (mot)
 
 
 def menu() :
