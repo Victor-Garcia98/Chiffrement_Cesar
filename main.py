@@ -37,7 +37,19 @@ def chiffrement_Cesar() :
     else :
         print(fonction_chiffrage(-cle, mot))
 
-chiffrement_Cesar()
+def menu() :
+    choix = int(input("Veuillez choisir l'action que vous souhaitez réaliser :\n\n1 : Chiffrage / Déchiffrage de texte"
+                      "\n2 : Méthode bruteforce pour retrouver la clé d'un texte chiffré\n\nChoix : "))
+    if choix == 1 :
+        chiffrement_Cesar()
+    elif choix == 2 :
+        placeholder = True
+        ## bruteforce()
+    else :
+        menu()
+
+
+menu()
 
 
 
