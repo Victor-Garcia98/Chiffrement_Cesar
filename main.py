@@ -65,6 +65,7 @@ def bruteforce() :
     print(bonneCle)
 
 def interrogation():
+
     if input("Avez vous un fichier texte ou une phrase ? (t/p): ") == 't':
         titre_fichier = input("Entrez le nom du fichier : ")
         mot = lecture_fichier(titre_fichier)
