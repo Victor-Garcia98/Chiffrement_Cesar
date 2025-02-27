@@ -52,6 +52,7 @@ def bruteforce() :
     mot = interrogation()
     essais = []
     dico = dictionnaire()
+    bonneCle="aucune clé correspondante n'a pu être trouvée"
     for i in range(25):
         score = 0
         phrase = fonction_chiffrage(i, mot)
